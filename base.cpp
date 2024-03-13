@@ -1,12 +1,11 @@
-#include "jugador.h"
-#include "enemigo.h"
+#include "base.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 
 using namespace std;
 
-Enemigo::Enemigo()
+Base::Base()
 {
     /*
         Asignar 100 a hp y 5 a attack como valores default.
@@ -17,7 +16,7 @@ Enemigo::Enemigo()
     this->nombre = "No definido";
 }
 
-Enemigo::Enemigo(int vida, int attack, string nombre)
+Base::Base(int vida, int attack, string nombre)
 {
     /*
         Asignar los parámetros recibidos a las propiedades del objeto.
@@ -39,17 +38,17 @@ Enemigo::Enemigo(int vida, int attack, string nombre)
     this->nombre = nombre;
 }
 
-void Enemigo::atacarJugador(Jugador &j2)
+void Base::atacar(Base &atacado)
 {
     int ran = rand() % 5;
     if (ran == 0)
     {
-        cout << this->nombre << " ataco a " << j2.nombre << " pero fallo, vida restante de " << j2.nombre << " = " << j2.vida << endl;
+        cout << this->nombre << " ataco a " << atacado.nombre << " pero fallo, vida restante de " << atacado.nombre << " = " << atacado.vida << endl;
     }
     else
     {
-        j2.vida -= this->attack;
-        cout << this->nombre << " ataco a " << j2.nombre << " e hizo " << this->attack << " de danio, vida restante de " << j2.nombre << " = " << j2.vida << endl;
+        atacado.vida -= this->attack;
+        cout << this->nombre << " ataco a " << atacado.nombre << " e hizo " << this->attack << " de danio, vida restante de " << atacado.nombre << " = " << atacado.vida << endl;
     }
 
 }
