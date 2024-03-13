@@ -18,11 +18,6 @@ Base::Base()
 
 Base::Base(int vida, int attack, string nombre)
 {
-    /*
-        Asignar los parámetros recibidos a las propiedades del objeto.
-        No se pueden asignar valores negativos a hp y attack.
-        Máximo 200 hp y 20 attack
-    */
     this->vida = vida;
     if (vida > 200)
         this->vida = 200;
@@ -50,5 +45,4 @@ void Base::atacar(Base &atacado)
         atacado.vida -= this->attack;
         cout << this->nombre << " ataco a " << atacado.nombre << " e hizo " << this->attack << " de danio, vida restante de " << atacado.nombre << " = " << atacado.vida << endl;
     }
-
 }
