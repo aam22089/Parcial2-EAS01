@@ -12,6 +12,7 @@ public:
     string nombre;
 
     Base();
+    Base(int vida, int attack);
     Base(int vida, int attack, string nombre);
 
     void atacar(Base &atacado);

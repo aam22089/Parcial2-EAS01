@@ -16,6 +16,21 @@ Base::Base()
     this->nombre = "No definido";
 }
 
+Base::Base(int vida, int attack)
+{
+    this->vida = vida;
+    if (vida > 200)
+        this->vida = 200;
+    if (vida <= 0)
+        this->vida = 1;
+
+    this->attack = attack;
+    if (attack > 200)
+        this->attack = 200;
+    if (attack <= 0)
+        this->attack = 1;
+}
+
 Base::Base(int vida, int attack, string nombre)
 {
     this->vida = vida;
