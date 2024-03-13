@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Jugador::Jugador(int vida, int attack) : Base(vida, attack) { atacadoPor = nullptr; }
+Jugador::Jugador(int vida, int attack) : Base(vida, attack, "No definido") { atacadoPor = nullptr; }
 void Jugador::atacarJugador(Jugador &j)
 {
     atacar(j);

@@ -2,7 +2,6 @@
 #define base_h
 #include <iostream>
 #include <string>
-#include "jugador.h"
 using namespace std;
 
 class Base
